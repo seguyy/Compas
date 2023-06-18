@@ -15,7 +15,7 @@ function Tracks({ topTracks }) {
             &nbsp;
             <span className="release-date">{track.date}</span>
             <span className="title-playOnSpotify">PLAY ON SPOTIFY</span>
-            <span>
+            <span className="logo-span">
               <a href={track.links}>
                 <img className="spotify-logo" src="assets/Spotify_Logo_RGB_White.png" alt="spotifylogo" />
               </a>

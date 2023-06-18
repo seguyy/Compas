@@ -18,6 +18,10 @@ function SongPlayer({ src }) {
   };
 
   const handlePlay = () => {
+    if (isPlayerActive) {
+      console.log(isPlayerActive);
+      audioRef.current.pause();
+    }
     setIsPlayerActive(true);
     setShowPlayButton(!showPlayButton);
     if (isPlayerActive === false) {
@@ -26,16 +30,15 @@ function SongPlayer({ src }) {
   };
 
   return (
-    <div>
+    <div className="playButton-container">
       <audio ref={audioRef}>
         <source src={src} type="audio/mpeg" />
       </audio>
-
       {showPlayButton ? (
         <button
           type="button"
           className="play-button"
-          disabled={isPlayerActive}
+          // disabled={isPlayerActive}
           onClick={() => {
             handlePlay();
           }}
